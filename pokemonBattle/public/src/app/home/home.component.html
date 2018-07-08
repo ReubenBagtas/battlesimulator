@@ -1,0 +1,44 @@
+<div id="container">
+
+
+    <div class="title" >Choose your Pokemon</div>
+
+
+    <div class="pokemons"  >
+      <div class="poke hello" *ngFor="let p of pokemons" (click)="selectPokemon(p.id)" #poke>
+        <img class="pokemonSprite"[ngClass]="{'hidden': !p.imageLoaded}" (load)="p.imageLoaded = true" [attr.src]="p.sprite" />
+        <div class="pokemonName">
+          {{ p.name | uppercase }}
+        </div>
+      </div>
+    </div>
+
+
+
+    <div class="footer">
+
+        <div class="selectedSlot">
+            <div class="pokemons" *ngIf="selectedPokemons.length>0">
+              <div class="selected" *ngFor="let s of selectedPokemons" >
+                <img   class="pokemonSprite" [ngClass]="{'hidden': !s.imageLoaded}" (load)="s.imageLoaded = true" [attr.src]="s.sprite" />
+              </div>
+            </div>
+
+            <button  (click)="continue()" class="ready btn btn-info btn-lg" *ngIf="selectedPokemons.length === maxSelected">
+              <span class="readyText">Ready <span class="glyphicon glyphicon-circle-arrow-right"> </span> </span>
+            </button>
+
+
+        </div>
+
+
+
+
+
+    </div>
+
+</div>
+
+
+
+

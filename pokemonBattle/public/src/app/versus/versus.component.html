@@ -1,0 +1,29 @@
+<div id="container">
+  <div class="contain">
+
+    <div class="pokeList">
+      <div class="player">Player One</div>
+      <div *ngFor='let pokemon of pokemons'>
+        <img src={{pokemon.sprite}} alt="" class="pokeImg">
+        <div class="pokeName">{{pokemon.name}}</div>
+      </div>
+    </div>
+
+    <div class="loading">
+      <p class="count">Simulating...</p>
+      <i class="fa fa-spinner fa-pulse fa-3x fa-fw" id="spinst"></i>
+      <span class="sr-only">Loading...</span>
+    </div>
+
+    <div class="pokeList">
+      <div class="player">Player 2</div>
+      <div *ngFor='let pokemon of pokemons'>
+        <img src={{pokemon.sprite}} alt="" class="pokeImg">
+        <div class="pokeName">{{pokemon.name}}</div>
+      </div>
+    </div>
+
+  </div>
+
+
+</div>

@@ -1,0 +1,124 @@
+$primaryBlue: rgba(5, 5, 117, 0.823);
+$opaqueRed: rgba(255, 0, 0, 0.769);
+$backgroundImage: "../../assets/images/hubBackground.jpg";
+$statTabBackColor: white;
+$pokeballBackground: "../../assets/images/pokeball.png";
+
+#container {
+  background-image: url($backgroundImage);
+  height: 100%;
+  background-position: center;
+  background-repeat: repeat-y;
+  background-size: cover;
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+  padding: 10em;
+
+  .infoBar {
+    background-image: url($pokeballBackground);
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 40vh;
+    height: 60vh;
+    // border: 5px solid red;
+    border-radius: 4%;
+    background-color: rgba(255, 255, 255, 0.362);
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+    margin-left: 10em;
+
+    .filler {
+      font-size: 2.5vh;
+
+      img {
+        margin-top: 5em;
+        height: auto;
+        width: 90%;
+      }
+
+      .pokeName {
+        background-color: $opaqueRed;
+        color: white;
+        border: 5px solid black;
+        border-radius: 10%;
+        text-align: center;
+      }
+      .pokeType {
+        border: 3px solid black;
+        background-color: $primaryBlue;
+        border-radius: 10%;
+        color: white;
+        text-align: center;
+      }
+
+      .pokeNum {
+        display: inline-block;
+        border-radius: 40%;
+        border: 3px solid black;
+        margin-left: 35%;
+      }
+    }
+    .nextPoke {
+      background-color: rgba(128, 128, 128, 0.734);
+      cursor: pointer;
+
+      &:hover {
+        background-color: rgba(128, 128, 128, 0.843);
+
+        h2 {
+          // color: red;
+        }
+      }
+
+      &:active {
+        h2 {
+          letter-spacing: -5px;
+        }
+      }
+
+      h2 {
+        vertical-align: middle;
+        margin-top: 300%;
+        color: white;
+        text-align: center;
+        letter-spacing: 2px;
+      }
+    }
+  }
+
+  .statBar {
+    border-top-left-radius: 3%;
+    border-top-right-radius: 3%;
+    height: 50vh;
+    background-color: rgba(255, 255, 255, 0.293);
+    .panel {
+      text-align: center;
+      color: white;
+      height: 5vh;
+    }
+
+    #statSheet {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+    }
+
+    .statTab {
+      &:hover {
+        background-color: rgba(0, 0, 0, 0.891);
+      }
+    }
+  }
+
+  .selections {
+    .sect {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+
+      button {
+        margin: 1vh 1vh;
+        height: 10vh;
+        width: auto;
+      }
+    }
+  }
+}

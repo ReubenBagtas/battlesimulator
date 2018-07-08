@@ -1,0 +1,58 @@
+$backgroundImage: "../../assets/images/loadingPage.jpg";
+$listBorder: 5px solid red;
+$nameColor: red;
+$loadColor: white;
+
+#container {
+  background-image: url($backgroundImage);
+  height: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  .contain {
+    height: auto;
+    display: grid;
+    grid-template-columns: 1fr 3fr 1fr;
+    padding-top: 10vh;
+
+
+    .pokeList {
+      margin: 2em 2em;
+      width: 40vh;
+      border: $listBorder;
+      color: $nameColor;
+
+      .pokeImg {
+        display: inline-block;
+      }
+
+      .pokeName {
+        vertical-align: top;
+        display: inline-block;
+      }
+    }
+
+    .loading {
+      color: $loadColor;
+      text-align: center;
+
+
+
+
+      .count {
+        color: white;
+        font-weight: bold;
+        font-size: 10vh;
+      }
+
+      .fa-spinner {
+        font-size: 20vh;
+      }
+
+      #loadIcon {
+
+      }
+    }
+  }
+}

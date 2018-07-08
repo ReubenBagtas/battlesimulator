@@ -1,0 +1,73 @@
+
+  <!-- GIF -->
+  <!-- <img src="https://img.pokemondb.net/sprites/black-white/anim/normal/25.gif" alt="pokemons[currentIndex].name"> -->
+
+<div id="container">
+
+  <div class="statBar">
+    <div class="panel">
+      <p>Stats</p>
+    </div>
+
+    <div id="statSheet">
+      <!-- Doughnut Chart -->
+      <div class="statTab" style="display: block;">
+        <canvas baseChart [data]="doughnutChartData" [labels]="doughnutChartLabels" [chartType]="doughnutChartType" (chartHover)="chartHovered($event)"
+          (chartClick)="chartClicked($event)"></canvas>
+      </div>
+      <!-- Bar Chart -->
+
+
+      <div class="statTab" style="display: block">
+        <canvas baseChart [datasets]="barChartData" [labels]="barChartLabels" [options]="barChartOptions" [legend]="barChartLegend"
+          [chartType]="barChartType" (chartHover)="chartHovered($event)" (chartClick)="chartClicked($event)"></canvas>
+      </div>
+
+
+
+      <div>hi</div>
+    </div>
+
+  </div>
+  <!-- If pokemons selected ============================================================ -->
+  <div class="infoBar" *ngIf='pokemons[0]'>
+    <div class="nextPoke" (click)="previous()">
+      <h2>
+        <<< </h2>
+    </div>
+    <div class="filler" *ngIf='pokemons[0].name'>
+      <h3 class="pokeName">{{pokemons[currentIndex].name | uppercase }}</h3>
+      <img *ngIf='pokemons' src={{pokemons[currentIndex].sprite}}>
+    </div>
+    <div class="nextPoke" (click)="next()">
+      <h2>
+        >>>
+      </h2>
+    </div>
+  </div>
+
+  <!-- ELSE ============================================================================= -->
+  <div class="infoBar" *ngIf="!pokemons[0]">
+    <div class="filler">
+      <h3 class="pokeName">No Pokemon Selected</h3>
+      <!-- <a href="http://pokemondb.net/pokedex/pikachu"><img src="https://img.pokemondb.net/sprites/black-white/anim/shiny/pikachu-f.gif" alt="Pikachu"></a> -->
+    </div>
+  </div>
+  <!-- =================================================================================== -->
+  <!-- <div class="selections">
+
+      <div class="sect">
+          <button>Select</button>
+          <button>Simulate</button>
+        </div>
+
+        <div class="sect">
+          <button>Stats</button>
+          <button>Etc</button>
+        </div>
+
+  </div> -->
+
+
+
+</div>

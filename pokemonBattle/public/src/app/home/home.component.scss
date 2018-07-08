@@ -1,0 +1,205 @@
+@import url("//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css");
+
+
+$primaryBlue: rgba(5, 5, 117, 0.823);
+$primaryRed: rgb(86, 3, 3);
+$opaqueRed: rgba(255, 0, 0, 0.769);
+$selectedBorder: rgba(0, 0, 255, 0.986);
+$selectedBackground: rgb(7, 149, 196);
+$borderTest: 1px solid red;
+
+
+
+
+
+
+#container {
+    background-image: url('../../assets/images/pokeSky.jpg');
+    height: 100%;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: repeat-y;
+    background-size: cover;
+    overflow: auto;
+    padding-bottom: 10em;
+
+    .title {
+        text-align: center;
+        font-size: 3em;
+        background-color: $opaqueRed;
+        margin: auto;
+        padding:2%;
+        color: white;
+    }
+
+
+    .pokemons {
+        display: grid;
+        grid-template-columns: repeat(9, 1fr);
+
+
+
+        .poke {
+            text-align: center;
+            background-image: url('../../assets/images/pokeball.png');
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: 60%;
+            border: 5px solid blue;
+            border-radius: 20%;
+
+            &:hover {
+                background-color: $selectedBackground;
+                border:5px solid $selectedBorder;
+                border-radius: 20%;
+                text-align: center;
+
+            }
+
+
+
+            .pokemonId {
+                display: inline-block;
+            }
+
+            .pokemonSprite {
+                display:block;
+                margin: 0 auto;
+                margin-bottom: -1em;
+                width:80%;
+            }
+
+            .pokemonName {
+                display: inline-block;
+                color: $primaryRed;
+                font-size: .7em;
+                border: 3px solid blue;
+                border-radius: 50%;
+                background-color: $selectedBackground;
+                padding: .5em;
+            }
+        }
+
+    }
+
+    .load-button {
+        position:fixed;
+        z-index: 1;
+    }
+
+    .footer {
+        position: fixed;
+        left:0;
+        bottom:0;
+        width:100%;
+        height:7em;
+        text-align: center;
+        background-color: $opaqueRed;
+
+
+        .selectedSlot {
+            position:relative;
+            padding-left:10%;
+            height: 5em;
+            width:70%;
+            background-color: white;
+            margin: auto;
+            margin-top:1em;
+            z-index:1;
+            border-radius: 2%;
+            .pokemons {
+                margin-top:0;
+                z-index: 2;
+                .selected {
+                margin: 0 auto;
+
+                    .pokemonSprite {
+                         width:100%;
+                     }
+                }
+            }
+
+            .ready {
+                z-index: 3;
+                background-color: rgba(0, 0, 255, 0.714);
+                position: absolute; top:0; left: 0;
+                width: 100%;
+                height: 100%;
+                font-size: 200%;
+                color: white;
+                border-radius: 2%;
+
+
+
+                &:hover {
+                    background-color:rgba(0, 0, 255, 0.823);
+                }
+
+
+
+            }
+
+        }
+
+
+
+    }
+
+
+}
+
+
+@media only screen and (max-width: 460px) {
+    #container {
+
+        .pokemons {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+        }
+
+        .footer {
+            .selectedSlot {
+                width:100%;
+
+
+                .pokemons {
+                    display: grid;
+                    grid-template-columns: repeat(9, 1fr)
+                }
+
+            }
+        }
+
+
+    }
+}
+
+.select {
+    background-color:red;
+}
+
+@media only screen and (min-width: 1000px) {
+    #container {
+
+        .footer {
+
+            .selectedSlot {
+
+                .pokemonSprite {
+                    width: 50%;
+                    margin-top:-1em;
+                }
+
+            }
+
+        }
+
+    }
+}
+
+
+
+
+
+
+
